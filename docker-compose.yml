@@ -71,17 +71,15 @@ services:
         - mentor-network
     environment:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://mentorapp-serviceregistry:8761/eureka    
-    
+        SPRING_DATA_ELASTICSEARCH_CLIENT_REACTIVE_ENDPOINTS: http://elastic:9200
+        SPRING_ELASTICSEARCH_REST_URIS: http://elastic:9200
   mentorapp-ui:
     image: mentorapp-ui
-    expose:
-        - 8077
     ports:
-        - 8077:8077
+        - 8077:80
     build:  mentorapp-ui/
     networks:
         - mentor-network
-        
 networks:
     mentor-network:
         driver: bridge
