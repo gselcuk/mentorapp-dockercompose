@@ -73,6 +73,14 @@ services:
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://mentorapp-serviceregistry:8761/eureka    
         SPRING_DATA_ELASTICSEARCH_CLIENT_REACTIVE_ENDPOINTS: http://elastic:9200
         SPRING_ELASTICSEARCH_REST_URIS: http://elastic:9200
+        
+   mentorapp-admin:
+    image: mentorapp-admin
+    ports:
+        - 8761:8761
+    build:  mentorapp-admin/
+    networks:
+        - mentor-network
   mentorapp-ui:
     image: mentorapp-ui
     ports:
