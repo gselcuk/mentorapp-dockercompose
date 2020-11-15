@@ -77,7 +77,7 @@ services:
    mentorapp-admin:
     image: mentorapp-admin
     ports:
-        - 8761:8761
+        - 8083:8083
     build:  mentorapp-admin/
     networks:
         - mentor-network
